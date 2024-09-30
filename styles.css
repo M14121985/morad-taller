@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+/* Asegúrate de que el navbar tenga un fondo transparente */
+.navbar {
+    background-color: transparent !important;
+    position: absolute;
+    width: 100%;
+    z-index: 1; /* Asegura que el navbar esté por encima del header */
+}
+
+/* Ajusta el header para que la imagen de fondo cubra tanto el navbar como el header */
+header {
+    background: url('imagenes/logo_morad.jpg') no-repeat center top;
+    background-size: cover;
+    margin-top: 0;
+    height: 100vh; /* Ajusta la altura para cubrir toda la ventana */
+    position: relative;
+    z-index: 0; /* Asegura que el header esté detrás del navbar */
+}
+
+.navbar-brand img {
+    width: 180px; /* 30px * 6 */
+    height: 180px; /* 30px * 6 */
+}
+
+h1, h2, p {
+    color: #fff;
+}
+
+/* Estilos personalizados */
+#animatedDiv {
+    background-color: #000;
+    color: #fff;
+    padding: 2.5vw; /* Reduce el padding a la mitad */
+    border-radius: 20px;
+    font-family: 'oswald', sans-serif;
+    text-align: center;
+    margin: 10px auto; /* Centra el contenedor */
+    font-size: 2vw; /* Reduce el tamaño de la fuente a la mitad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agrega transición al cambio de escala y sombra */
+    transition-property: transform, padding, box-shadow;
+    perspective: 1000px; /* Añade perspectiva para efecto 3D */
+    position: relative;
+    max-width: 90%; /* Ajusta el ancho máximo del contenedor */
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usa flexbox para distribuir las palabras */
+    flex-wrap: wrap; /* Permitir que las palabras se envuelvan en varias líneas */
+    justify-content: center; /* Centra las palabras */
+}
+
+.list-inline-item {
+    margin: 0.25vw; /* Reduce el espacio entre las palabras a la mitad */
+    cursor: pointer;
+    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease; /* Agrega transición al cambio de escala, tamaño de fuente y color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+    transform-style: preserve-3d; /* Mantiene la transformación 3D */
+}
+
+/* Efecto de aumento de tamaño al pasar el cursor */
+.list-inline-item:hover {
+    transform: scale(1.2) rotateY(5deg); /* Aumenta el tamaño y la inclinación */
+    font-size: 2.5vw; /* Reduce el tamaño de la fuente a la mitad */
+}
+
+/* Efecto de rotación al pasar el cursor sobre el contenedor principal */
+#animatedDiv:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotación y aumento de tamaño */
+}
+
+/* Efecto de levantamiento de todas las letras */
+.list-inline-item span {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Agrega transición al cambio de escala */
+    transform-style: preserve-3d; /* Mantiene la transformación 3D */
+}
+
+/* Efecto de levantamiento al pasar el cursor sobre cada letra */
+.list-inline-item:hover span {
+    transform: translateY(-5px); /* Levanta la letra */
+}
+
+/* Cambio de color al levantar la palabra */
+.list-inline-item:hover {
+    color: #ff00ff; /* Cambia el color de la palabra al levantarla */
+}
