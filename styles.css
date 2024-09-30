@@ -1,4 +1,4 @@
-/* Estilos para replicar la imagen */
+/* Estilos generales del cuerpo de la página */
 html, body {
     height: 100%;
     margin: 0;
@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
 }
 
+/* Estilos del pie de página */
 footer {
     margin-top: auto;
     position: relative;
@@ -21,6 +22,7 @@ footer {
     width: 100%;
 }
 
+/* Estilos para secciones genéricas */
 .section {
     height: auto;
     display: flex;
@@ -30,32 +32,38 @@ footer {
     padding: 20px;
 }
 
+/* Estilos para el mapa (si lo hubiera) */
 #map {
     height: 400px;
 }
-
-/* ... (otros estilos) ... */
-
+/* Eliminamos el margen superior del contenido principal */
+.contenido-principal {
+    margin-top: 0;
+}
+/* Estilos de la barra de navegación (navbar) */
 .navbar {
     background-color: transparent !important;
     backdrop-filter: blur(5px);
-    position: absolute;
-    top: 0;
-    right: 0;
+    /* Eliminamos position: fixed */
+    margin-top: auto; /* Empujamos el navbar hacia abajo */
+    left: 0;
+    width: 100%;
     padding: 20px;
     z-index: 1000;
 }
-
 .navbar-brand {
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .navbar-brand img {
-    height: 80px;
+    height: 350px; /* O el valor que desees */
+    width: auto;
+    object-fit: contain;
 }
 
 .navbar-nav {
-    margin-right: 0;
+    margin-left: 100px; /* Ajusta este valor según el desplazamiento deseado */
+    margin-right: auto;
 }
 
 .nav-link {
@@ -63,10 +71,12 @@ footer {
     font-weight: bold;
 }
 
+/* Estilos del encabezado (header) */
 header {
-    background: url('imagenes/logo_morad.jpg') no-repeat center center;
-    background-position: center top; /* Ajustamos la posición de la imagen de fondo */
+    background: url('imagenes/logo morad 2.jpg') no-repeat center center;
+    background-position: center top;
     background-size: cover;
+    padding-bottom: 20px; /* Ajusta este valor si es necesario */
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -74,13 +84,13 @@ header {
     align-items: center;
     text-align: center;
     color: white;
-    position: relative; /* Establecemos el header como relativo para que el navbar se posicione dentro de él */
 }
 
 h1, h2, p {
     color: #fff;
 }
 
+/* Estilos para un div animado */
 #animatedDiv {
     background-color: transparent;
     color: #fff;
@@ -98,6 +108,7 @@ h1, h2, p {
     margin-top: 10vh;
 }
 
+/* Estilos para listas desordenadas */
 .list-unstyled {
     list-style: none;
     padding: 0;
@@ -176,7 +187,7 @@ footer {
     background-color: #555;
 }
 
-/* Place the services, about us, and contact links below the map */
+/* Estilos para los enlaces de servicios, sobre nosotros y contacto */
 .services-about-contact {
     display: flex;
     justify-content: space-around;
@@ -188,19 +199,23 @@ footer {
     text-decoration: none;
 }
 
-
 /* Estilos para los elementos del menú de navegación */
 .navbar-nav .nav-link {
     color: #ffffff !important;
     font-weight: bold;
-    cursor: pointer; /* Hacemos que el cursor cambie al pasar sobre los enlaces */
-    transition: all 0.3s ease-in-out; /* Aplicamos la transición suave */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadimos una sombra suave */
-    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
-/* Efecto al pasar el ratón sobre los enlaces */
+/* Efecto al pasar el ratón sobre los enlaces del menú */
 .navbar-nav .nav-link:hover {
-    transform: scale(1.05) rotateY(2deg); /* Escalamos y rotamos ligeramente */
-    color: #37ff00; /* Cambiamos el color del texto */
+    transform: scale(1.05) rotateY(2deg);
+    color: #37ff00;
+}
+
+/* Agrega margen superior al contenido principal */
+.contenido-principal {
+    margin-top: 35vh; /* Ajusta este valor para que coincida con la altura del header y el navbar */
 }
