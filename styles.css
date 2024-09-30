@@ -1,6 +1,9 @@
+/* Estilos para replicar la imagen */
 html, body {
     height: 100%;
     margin: 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -8,96 +11,196 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 footer {
     margin-top: auto;
-}
-/* Asegúrate de que el navbar tenga un fondo transparente */
-.navbar {
-    background-color: transparent !important;
-    position: absolute;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    z-index: 1; /* Asegura que el navbar esté por encima del header */
 }
 
-/* Ajusta el header para que la imagen de fondo cubra tanto el navbar como el header */
-header {
-    background: url('imagenes/logo_morad.jpg') no-repeat center top;
-    background-size: cover;
-    margin-top: 0;
-    height: 100vh; /* Ajusta la altura para cubrir toda la ventana */
-    position: relative;
-    z-index: 0; /* Asegura que el header esté detrás del navbar */
+.section {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#map {
+    height: 400px;
+}
+
+/* ... (otros estilos) ... */
+
+.navbar {
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    margin-left: auto;
 }
 
 .navbar-brand img {
-    width: 180px; /* 30px * 6 */
-    height: 180px; /* 30px * 6 */
+    height: 80px;
+}
+
+.navbar-nav {
+    margin-right: 0;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+header {
+    background: url('imagenes/logo_morad.jpg') no-repeat center center;
+    background-position: center top; /* Ajustamos la posición de la imagen de fondo */
+    background-size: cover;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative; /* Establecemos el header como relativo para que el navbar se posicione dentro de él */
 }
 
 h1, h2, p {
     color: #fff;
 }
 
-/* Estilos personalizados */
 #animatedDiv {
-    background-color: #000;
+    background-color: transparent;
     color: #fff;
-    padding: 2.5vw; /* Reduce el padding a la mitad */
+    padding: 2.5vw;
     border-radius: 20px;
     font-family: 'oswald', sans-serif;
     text-align: center;
-    margin: 10px auto; /* Centra el contenedor */
-    font-size: 2vw; /* Reduce el tamaño de la fuente a la mitad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agrega transición al cambio de escala y sombra */
+    margin: 0 auto;
+    font-size: 2.2vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition-property: transform, padding, box-shadow;
-    perspective: 1000px; /* Añade perspectiva para efecto 3D */
+    perspective: 1000px;
     position: relative;
-    max-width: 90%; /* Ajusta el ancho máximo del contenedor */
+    max-width: 100%;
+    margin-top: 10vh;
 }
 
 .list-unstyled {
     list-style: none;
     padding: 0;
-    display: flex; /* Usa flexbox para distribuir las palabras */
-    flex-wrap: wrap; /* Permitir que las palabras se envuelvan en varias líneas */
-    justify-content: center; /* Centra las palabras */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .list-inline-item {
-    margin: 0.25vw; /* Reduce el espacio entre las palabras a la mitad */
+    margin: 0.25vw;
     cursor: pointer;
-    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease; /* Agrega transición al cambio de escala, tamaño de fuente y color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra suave */
-    border-radius: 10px; /* Bordes redondeados */
-    transform-style: preserve-3d; /* Mantiene la transformación 3D */
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    white-space: nowrap;
 }
 
-/* Efecto de aumento de tamaño al pasar el cursor */
 .list-inline-item:hover {
-    transform: scale(1.2) rotateY(5deg); /* Aumenta el tamaño y la inclinación */
-    font-size: 2.5vw; /* Reduce el tamaño de la fuente a la mitad */
+    transform: scale(1.05) rotateY(2deg);
 }
 
-/* Efecto de rotación al pasar el cursor sobre el contenedor principal */
+.list-inline-item:hover span {
+    transform: translateY(-0.5px);
+}
+
 #animatedDiv:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotación y aumento de tamaño */
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1);
 }
 
-/* Efecto de levantamiento de todas las letras */
 .list-inline-item span {
     display: inline-block;
-    transition: transform 0.3s ease; /* Agrega transición al cambio de escala */
-    transform-style: preserve-3d; /* Mantiene la transformación 3D */
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
-/* Efecto de levantamiento al pasar el cursor sobre cada letra */
-.list-inline-item:hover span {
-    transform: translateY(-5px); /* Levanta la letra */
-}
-
-/* Cambio de color al levantar la palabra */
 .list-inline-item:hover {
-    color: #ff00ff; /* Cambia el color de la palabra al levantarla */
+    color: #ff4d00;
+}
+
+/* Estilos adicionales */
+body {
+    background-color: #111;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #222;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-info h2 {
+    margin-bottom: 20px;
+}
+
+.location-info .address {
+    margin-bottom: 20px;
+}
+
+.scrolled {
+    background-color: #555;
+}
+
+/* Place the services, about us, and contact links below the map */
+.services-about-contact {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.services-about-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Estilos para los elementos del menú de navegación */
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: bold;
+    cursor: pointer; /* Hacemos que el cursor cambie al pasar sobre los enlaces */
+    transition: all 0.3s ease-in-out; /* Aplicamos la transición suave */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadimos una sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Efecto al pasar el ratón sobre los enlaces */
+.navbar-nav .nav-link:hover {
+    transform: scale(1.05) rotateY(2deg); /* Escalamos y rotamos ligeramente */
+    color: #37ff00; /* Cambiamos el color del texto */
 }

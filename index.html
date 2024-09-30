@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="imagenes/logo_morad.jpg" alt="Talleres MORAD" width="30" height="30" class="d-inline-block align-top">
 
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+        <img src="imagenes/logo_morad.jpg" alt="Talleres MORAD" width="100" height="100">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,32 +34,17 @@
     </div>
 </nav>
 
-<header class="bg-dark text-white text-center py-5">
-    <h1>Bienvenidos a Talleres MORAD</h1>
-    <p>La mejor mecánica general en La Dalia, 39b, 52006</p>
+<header class="section">
+    <div id="animatedDiv" class="p-4 rounded" onmouseover="startAnimation()" onmouseleave="stopAnimation()" style="cursor:pointer;">
+        <ul class="list-unstyled">
+            <li class="list-inline-item"><span>B</span>ienvenidos a Talleres Morad<br>
+                <span>L</span>a mejor mecánica general en Melilla.</li>
+        </ul>
+    </div>
 </header>
 
-<section class="container my-5">
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Servicios</h2>
-            <p>Ofrecemos una amplia gama de servicios mecánicos para tu vehículo.</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Sobre Nosotros</h2>
-            <p>Con más de 20 años de experiencia, somos tu taller de confianza.</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Contacto</h2>
-            <p>Teléfono: +34 699 883 683</p>
-            <p>Dirección: La Dalia, 39b, 52006</p>
-            <p>WhatsApp: <a href="https://wa.me/34699883683">+34 699 883 683</a></p>
-        </div>
-    </div>
-</section>
-
-<a href="https://www.zubimendiadministracionempresarial.es/" target="_blank" style="text-decoration: none;">
-    <div id="animatedDiv" class="p-4 rounded">
+<section class="container my-5 section">
+    <div class="p-4 rounded">
         <ul class="list-unstyled">
             <li class="list-inline-item"><span>D</span>IAGNOSIS DE TODAS LAS MARCAS</li>
             <li class="list-inline-item"><span>C</span>AMBIO DE ACEITE</li>
@@ -69,16 +54,65 @@
             <li class="list-inline-item"><span>C</span>HAPA Y PINTURA</li>
         </ul>
     </div>
-</a>
+</section>
 
-<footer class="bg-dark text-white text-center py-3">
+<section class="container my-5 section">
+    <div class="location-info">
+        <h2>Ubicación</h2>
+        <div class="address">
+            <p><strong>Dirección:</strong> La Dalia 39B, 52006 Melilla</p>
+            <p><strong>Teléfono:</strong> +34 699 883 683</p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <div class="services-about-contact">
+        <a href="#">Servicios</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Contacto</a>
+    </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3 section">
     <p>© 2024 Talleres MORAD. Todos los derechos reservados.</p>
 </footer>
 
-<!-- Pega tu script aquí -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="scripts.js"></script>
+
+<script>
+    // ... (your existing scripts) ...
+
+    function initMap() {
+        var location = {lat: 35.292, lng: -2.938};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+<script>
+    window.onscroll = function() {
+        let sections = document.querySelectorAll('.section');
+        let scrollPosition = window.pageYOffset;
+
+        sections.forEach((section) => {
+            let sectionTop = section.offsetTop - 50;
+            if (scrollPosition >= sectionTop) {
+                section.classList.add('scrolled');
+            } else {
+                section.classList.remove('scrolled');
+            }
+        });
+    };
+</script>
+
 </body>
-</html>
+</html></html>
