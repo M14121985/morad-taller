@@ -290,6 +290,31 @@ p {
         margin: 0.5vw;
     }
 }
+/* iPhone */
+@media (max-width: 414px) {
+    body {
+        font-size: 14px; /* Reduce el tamaño de fuente general */
+    }
+
+    .navbar-brand img {
+        height: 80px; /* Reduce el tamaño del logo */
+    }
+
+    #animatedDiv {
+        font-size: 3vw; /* Reduce el tamaño de fuente del div animado */
+        padding: 2vw 3vw; /* Ajusta el padding */
+    }
+
+    .list-inline-item {
+        font-size: 12px; /* Reduce el tamaño de fuente de los elementos de la lista */
+        margin: 0.3vw; /* Ajusta el margen */
+    }
+
+    footer {
+        font-size: 12px; /* Reduce el tamaño de fuente del footer */
+        padding: 10px; /* Ajusta el padding */
+    }
+}
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {

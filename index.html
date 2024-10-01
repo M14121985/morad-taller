@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talleres MORAD</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta name="msvalidate.01" content="37CF82026ABD2E4178E0C07E231464FB" />
+    <meta name="google-site-verification" content="JoHuYqAW2yyt0edwi4EIu1qAyCxIj9DGAQAo3tHR_G4" />
     <style>/* Estilos generales del cuerpo de la página */
     html,
     body {
@@ -369,7 +370,31 @@
         }
     }
 
+    /* iPhone */
+    @media (max-width: 414px) {
+        body {
+            font-size: 14px; /* Reduce el tamaño de fuente general */
+        }
 
+        .navbar-brand img {
+            height: 80px; /* Reduce el tamaño del logo */
+        }
+
+        #animatedDiv {
+            font-size: 3vw; /* Reduce el tamaño de fuente del div animado */
+            padding: 2vw 3vw; /* Ajusta el padding */
+        }
+
+        .list-inline-item {
+            font-size: 12px; /* Reduce el tamaño de fuente de los elementos de la lista */
+            margin: 0.3vw; /* Ajusta el margen */
+        }
+
+        footer {
+            font-size: 12px; /* Reduce el tamaño de fuente del footer */
+            padding: 10px; /* Ajusta el padding */
+        }
+    }
 
 
     </style>
@@ -397,6 +422,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="terminos-y-condiciones.html">Términos y Privacidad</a>
                 </li>
             </ul>
         </div>
