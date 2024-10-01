@@ -37,8 +37,8 @@
 <header class="section">
     <div id="animatedDiv" class="p-4 rounded" onmouseover="startAnimation()" onmouseleave="stopAnimation()" style="cursor:pointer;">
         <ul class="list-unstyled">
-            <li class="list-inline-item"><span>B</span>ienvenidos a Talleres Morad<br>
-                <span>L</span>a mejor mecánica general en Melilla.</li>
+            <li class="list-inline-item"><span data-text="B">B</span>ienvenidos a Talleres Morad<br>
+                <span data-text="L">L</span>a mejor mecánica general en Melilla.</li>
         </ul>
     </div>
 </header>
@@ -56,13 +56,30 @@
     </div>
 </section>
 
-<footer class="bg-dark text-white text-center py-3 section">
-    <div class="contact-info">
-        <p>Dirección: C/ La Hila, 18H - 52005 Melilla</p>
-        <p>Teléfono: +34 659 853 862</p>
-        <p>Correo electrónico: talleresmoradmelilla@hotmail.com</p>
+<footer class="bg-dark text-white py-3 section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-info">
+                    <p>Dirección: C/ La Hila, 18H - 52005 Melilla</p>
+                    <p>Teléfono: +34 699883683</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="https://api.whatsapp.com/send?phone=34699883683" target="_self">
+                    <img src="imagenes/whatsapp-logo.png" alt="WhatsApp" width="50" height="50">
+                </a>
+            </div>
+            <div class="col-md-4 text-right">
+                <div class="email-info">
+                    <p>Correo electrónico: talleresmoradmelilla@hotmail.com</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <p>© 2024 Talleres MORAD. Todos los derechos reservados.</p>
+    <div class="marca text-center mt-3">
+        <p> 2024 Talleres MORAD. Todos los derechos reservados.</p>
+    </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

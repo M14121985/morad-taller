@@ -20,8 +20,27 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    padding: 20px;
+    height: 150px; /* Ajusta la altura del footer */
 }
 
+.contact-info {
+    text-align: left;
+}
+
+.email-info {
+    text-align: right;
+}
+
+.marca {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: absolute; /* Posiciona el div de la marca absolutamente */
+    bottom: 0; /* Coloca el div de la marca al pie del footer */
+    left: 0; /* Coloca el div de la marca al centro del footer */
+    width: 100%; /* Establece el ancho del div de la marca al 100% */
+}
 /* Estilos para secciones genéricas */
 .section {
     height: auto;
@@ -96,6 +115,7 @@ h1, h2, p {
     color: #fff;
     padding: 2.5vw;
     border-radius: 20px;
+    font-style: italic;
     font-family: 'oswald', sans-serif;
     text-align: center;
     margin: 0 auto;
@@ -106,6 +126,39 @@ h1, h2, p {
     position: relative;
     max-width: 100%;
     margin-top: 10vh;
+    /* Nuevos efectos */
+    transform-style: preserve-3d;
+}
+
+#animatedDiv span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+#animatedDiv span:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#animatedDiv span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(-10px);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#animatedDiv span::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(10px);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Estilos para listas desordenadas */
@@ -155,6 +208,7 @@ body {
 }
 
 .section {
+
     padding: 50px 0;
     text-align: center;
 }
