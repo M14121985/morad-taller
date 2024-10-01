@@ -1,5 +1,6 @@
 /* Estilos generales del cuerpo de la página */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     overflow-y: auto;
@@ -12,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: Arial, sans-serif;
 }
 
 /* Estilos del pie de página */
@@ -21,7 +23,8 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 20px;
-    height: 150px; /* Ajusta la altura del footer */
+    height: 150px;
+    background-color: #222;
 }
 
 .contact-info {
@@ -36,11 +39,12 @@ footer {
     width: 100%;
     text-align: center;
     margin-top: 20px;
-    position: absolute; /* Posiciona el div de la marca absolutamente */
-    bottom: 0; /* Coloca el div de la marca al pie del footer */
-    left: 0; /* Coloca el div de la marca al centro del footer */
-    width: 100%; /* Establece el ancho del div de la marca al 100% */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
+
 /* Estilos para secciones genéricas */
 .section {
     height: auto;
@@ -48,40 +52,46 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 50px 0;
 }
 
 /* Estilos para el mapa (si lo hubiera) */
 #map {
-    height: 400px;
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
 }
+
 /* Eliminamos el margen superior del contenido principal */
 .contenido-principal {
     margin-top: 0;
 }
+
 /* Estilos de la barra de navegación (navbar) */
 .navbar {
     background-color: transparent !important;
     backdrop-filter: blur(5px);
-    /* Eliminamos position: fixed */
-    margin-top: auto; /* Empujamos el navbar hacia abajo */
+    margin-top: auto;
     left: 0;
     width: 100%;
     padding: 20px;
     z-index: 1000;
 }
+
 .navbar-brand {
     margin-left: 0;
 }
 
 .navbar-brand img {
-    height: 350px; /* O el valor que desees */
+    height: 350px;
+    /* Ajusta el tamaño del logo */
     width: auto;
     object-fit: contain;
+    margin-top: -60px; /* Ajusta este valor para subir o bajar el logo */
 }
 
 .navbar-nav {
-    margin-left: 100px; /* Ajusta este valor según el desplazamiento deseado */
+    margin-left: 100px;
     margin-right: auto;
 }
 
@@ -95,7 +105,7 @@ header {
     background: url('imagenes/logo morad 2.jpg') no-repeat center center;
     background-position: center top;
     background-size: cover;
-    padding-bottom: 20px; /* Ajusta este valor si es necesario */
+    padding-bottom: 20px;
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -105,60 +115,67 @@ header {
     color: white;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
     color: #fff;
 }
 
 /* Estilos para un div animado */
+/* Contenedor del header */
+.header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Estilos para el div animado */
 #animatedDiv {
     background-color: transparent;
     color: #fff;
     padding: 2.5vw;
     border-radius: 20px;
     font-style: italic;
-    font-family: 'oswald', sans-serif;
+    font-size: 4.4vw;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
-    margin: 0 auto;
-    font-size: 2.2vw;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transition-property: transform, padding, box-shadow;
     perspective: 1000px;
     position: relative;
-    max-width: 100%;
-    margin-top: 10vh;
-    /* Nuevos efectos */
-    transform-style: preserve-3d;
+    z-index: 1;
 }
 
+/* Efectos adicionales */
 #animatedDiv span {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
+/* Efecto de hover */
 #animatedDiv span:hover {
     transform: rotateY(10deg) rotateX(10deg) scale(1.1);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-#animatedDiv span::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateZ(-10px);
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
+#animatedDiv span::before,
 #animatedDiv span::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateZ(10px);
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#animatedDiv span::before {
+    transform: translateZ(-10px);
+}
+
+#animatedDiv span::after {
+    transform: translateZ(10px);
 }
 
 /* Estilos para listas desordenadas */
@@ -181,6 +198,7 @@ h1, h2, p {
 
 .list-inline-item:hover {
     transform: scale(1.05) rotateY(2deg);
+    color: #ff4d00;
 }
 
 .list-inline-item:hover span {
@@ -197,63 +215,7 @@ h1, h2, p {
     transform-style: preserve-3d;
 }
 
-.list-inline-item:hover {
-    color: #ff4d00;
-}
-
-/* Estilos adicionales */
-body {
-    background-color: #111;
-    font-family: Arial, sans-serif;
-}
-
-.section {
-
-    padding: 50px 0;
-    text-align: center;
-}
-
-footer {
-    background-color: #222;
-}
-
-#map {
-    width: 100%;
-    height: 300px;
-    margin-top: 20px;
-}
-
-.location-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.location-info h2 {
-    margin-bottom: 20px;
-}
-
-.location-info .address {
-    margin-bottom: 20px;
-}
-
-.scrolled {
-    background-color: #555;
-}
-
-/* Estilos para los enlaces de servicios, sobre nosotros y contacto */
-.services-about-contact {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.services-about-contact a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Estilos para los elementos del menú de navegación */
+/* Estilos para los enlaces del menú de navegación */
 .navbar-nav .nav-link {
     color: #ffffff !important;
     font-weight: bold;
@@ -261,15 +223,105 @@ footer {
     transition: all 0.3s ease-in-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    display: inline-block;
+    transform-style: preserve-3d;
+    margin-right: 20px;
+    padding: 0.5rem 1rem;
+    perspective: 1000px;
+    position: relative;
+    font-style: normal;
 }
 
 /* Efecto al pasar el ratón sobre los enlaces del menú */
 .navbar-nav .nav-link:hover {
-    transform: scale(1.05) rotateY(2deg);
-    color: #37ff00;
+    transform: scale(1.05) rotateY(10deg) rotateX(10deg);
+    color: #ff4d00;
+    text-shadow:
+            0 0 30px rgba(255, 77, 0, 0.5),
+            0 0 20px rgb(255, 77, 0),
+            0 0 10px rgb(255, 77, 0);
+    box-shadow: 0 0 10px rgb(255, 77, 0);
+}
+
+/* Añade pseudo-elementos para crear el efecto 3D */
+.navbar-nav .nav-link::before,
+.navbar-nav .nav-link::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(-10px);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav .nav-link::after {
+    transform: translateZ(10px);
+    color: #fff;
 }
 
 /* Agrega margen superior al contenido principal */
 .contenido-principal {
-    margin-top: 35vh; /* Ajusta este valor para que coincida con la altura del header y el navbar */
+    margin-top: 35vh;
+}
+
+/* Media queries para diseño responsivo */
+
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+    #animatedDiv {
+        font-size: 5vw;
+        padding: 3vw 5vw;
+    }
+
+    .navbar-brand img {
+        height: 150px;
+    }
+
+    .navbar-nav {
+        margin-left: 20px;
+    }
+
+    .header-container {
+        margin-top: 100px;
+    }
+
+    .list-inline-item {
+        margin: 0.5vw;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #animatedDiv {
+        font-size: 4vw;
+        padding: 2vw 4vw;
+    }
+
+    .navbar-brand img {
+        height: 200px;
+    }
+
+    .header-container {
+        margin-top: 120px;
+    }
+}
+
+/* Laptops */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    #animatedDiv {
+        font-size: 3vw;
+        padding: 1.5vw 3vw;
+    }
+
+    .navbar-brand img {
+        height: 250px;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1440px) {
+    #animatedDiv {
+        font-size: 2vw;
+    }
 }
