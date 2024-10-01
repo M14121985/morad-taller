@@ -124,6 +124,28 @@
         /* Ajusta este valor según el desplazamiento deseado */
         margin-right: auto;
     }
+    .navbar-nav .nav-link {
+        /* ... (otros estilos) ... */
+        transition: all 0.3s ease-in-out;
+        padding: 0.5rem 1rem;
+        perspective: 1000px;
+        position: relative;
+    }
+
+    /* Efecto al pasar el ratón sobre los enlaces del menú */
+    .navbar-nav .nav-link:hover {
+        transform: scale(1.05) rotateY(10deg) rotateX(10deg);
+        color: #ff4d00;
+        /* Color de texto naranja en hover */
+        text-shadow:
+                0 0 80px rgb(255, 77, 0), /* Sombra más grande */
+                0 0 60px rgb(255, 77, 0),
+                0 0 30px rgb(255, 77, 0);
+        box-shadow: 0 0 30px rgb(255, 77, 0); /* Sombra más grande */
+    }
+
+    /* Aumenta el tamaño de la sombra */
+    }
 
     .nav-link {
         color: white !important;
@@ -173,11 +195,12 @@
     /* Estilos para el div animado */
     #animatedDiv {
         background-color: transparent;
-        color: #fff;
+        color: #ffffff; /* Color blanco más brillante */
+        text-shadow: 0 0 80px #ff4d00; /* Sombra naranja brillante */
         padding: 1vw 2vw;
         border-radius: 20px;
         font-style: italic;
-        font-size: 2.5vw;
+        font-size: 3vw;
         /* Reduce el tamaño de la fuente */
         font-family: 'Oswald', sans-serif;
         text-align: center;
@@ -190,6 +213,7 @@
     #animatedDiv span {
         display: inline-block;
         transition: transform 0.3s ease;
+        text-shadow: 0 0 80px #ff4d00; /* Sombra naranja brillante */
     }
 
     /* Efecto de hover */
@@ -467,7 +491,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="https://api.whatsapp.com/send?phone=34699883683" target="_self">
+                    <a href="https://api.whatsapp.com/send?phone=34699883683&text=Hola!%20Bienvenido%20a%20Talleres%20Morad.%20Nos%20comprometemos%20a%20proteger%20tu%20privacidad%20según%20la%20LOPDGDD%20y%20el%20RGPD.%20No%20almacenamos%20tus%20datos%20personales%20y%20solo%20usamos%20los%20mensajes%20de%20esta%20conversación%20para%20prestarte%20nuestros%20servicios.%20Puedes%20consultar%20nuestra%20política%20de%20privacidad%20completa%20aquí:%20https://talleresmoradmecanica.es/terminos-y-condiciones-y-politica-de-privacidad.html" target="_self">
                         <img src="imagenes/whatsapp-logo.png" alt="WhatsApp" width="50" height="50">
                     </a>
                 </div>
